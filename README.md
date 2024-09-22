@@ -28,15 +28,19 @@ Loss function:
     > From my experience, assigning too small a weight to the KL divergence term works fine for reconstruction, but it tends to degrade the quality of generated samples. This likely happens because the latent distribution drifts away from the standard normal distribution.
 
 Progress on Validation Set:
-    ![Training Progress](./assets/progress.gif)
+
+![Training Progress](./assets/progress.gif)
 
 ### Results
 - Reconstruction: 
-![Reconstruction](./assets/recon.png)
+  
+  ![Reconstruction](./assets/recon.png)
 - Generation: 
-![Generation](./assets/gen.png)
+  
+  ![Generation](./assets/gen.png)
 - Latent Space Visualization:
-![Latent Space](./assets/tsne.png)
+  
+  ![Latent Space](./assets/tsne.png)
 
 ### References
 Textbook:
