@@ -1,25 +1,25 @@
 
-## Variational Autoencoder (VAE) in PyTorch
+# Variational Autoencoder (VAE) in PyTorch
 
-### Dataset
+## Dataset
 The dataset used in this project is the **MNIST dataset**.
  - Training set: 60,000 images.
  - Test set: 10,000 images.
  - Image size: (28, 28), pixel values in [0, 255].
  - Preprocess: Sacle and Normalize the pixel values to N(0, 1). `x = (x/255 - 0.1307) / 0.3081`.
 
-### Usage
+## Usage
 1. Configure the hyperparameters in `config.yaml`.
 2. Train the model: `python simple_vae.py -c config.yaml`.
 
-### Model
+## Model
 The model is a simple VAE with two hidden layers in both the encoder and decoder.
  - Encoder: 784 (28*28) $\rightarrow$ 100 $\rightarrow$ 100 $\rightarrow$ 32
  - Decoder: 32 $\rightarrow$ 100 $\rightarrow$ 100 $\rightarrow$ 784 (28*28)
 
 The input image is flattened to a 784-dim vector, and the latent space is 32-dim.
 
-### Training
+## Training
 Loss function: 
  - Reconstruction loss: $\sum_{i=1}^{28*28} (x_i - \hat{x}_i)^2$.
  - Regularization loss: $D_{KL}(q(z|x)||p(z)) = \frac{1}{2} \sum_{d_z=1}^{32} (\exp(\log \sigma^2) + \mu^2 - 1 - \log \sigma^2)$.
@@ -31,18 +31,20 @@ Progress on Validation Set:
 
 ![Training Progress](./assets/progress.gif)
 
-### Results
-- Reconstruction: 
+## Results
+### Reconstruction: 
   
-  ![Reconstruction](./assets/recon.png)
-- Generation: 
-  
-  ![Generation](./assets/gen.png)
-- Latent Space Visualization:
-  
-  ![Latent Space](./assets/tsne.png)
+  <img src="./assets/recon.png" width="400">
 
-### References
+### Generation: 
+
+  <img src="./assets/gen.png" width="400">
+  
+### Latent Space Visualization:
+
+  <img src="./assets/tsne.png" width="400">
+
+## References
 Textbook:
  - [1] The original paper: [Auto-Encoding Variational Bayes](https://arxiv.org/abs/1312.6114)
  - [2] The tutorial paper: [Tutorial on Variational Autoencoders](https://arxiv.org/abs/1606.05908)
