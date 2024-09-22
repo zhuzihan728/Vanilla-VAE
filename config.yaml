@@ -1,0 +1,9 @@
+input_dim: 784
+hidden_dim: 100
+z_dim: 32
+batch_size: 128
+n_epochs: 20
+save_dir: 'out_logs'
+log_interval: 128
+val_interval_epoch: 5
+enable_beta: false

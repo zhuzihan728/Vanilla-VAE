@@ -1,0 +1,4 @@
+mnist_data/*
+out_logs/*
+
+*.pyc
