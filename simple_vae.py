@@ -125,8 +125,8 @@ if __name__ == '__main__':
     
 
     saver.log_info('======= start training =======')
+    vae.train()
     for epoch in range(n_epochs):
-        vae.train()
         for i, data in enumerate(train_loader):
             saver.global_step_increment()
             images, labels = data
@@ -201,5 +201,6 @@ if __name__ == '__main__':
                     'val/rec_loss': test_rec_loss,
                     'val/reg_loss': test_reg_loss,
                 })
+                vae.train()
     
     saver.save_model(vae, optimizer, postfix=f'{saver.global_step}')
